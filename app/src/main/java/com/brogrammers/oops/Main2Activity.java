@@ -2,6 +2,7 @@ package com.brogrammers.oops;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -75,7 +76,11 @@ public class Main2Activity extends AppCompatActivity {
         ivIlls.startAnimation(stb2);
 
     }
+    @Override
     public void onBackPressed() {
-        finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 }
